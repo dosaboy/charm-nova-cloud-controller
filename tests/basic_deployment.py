@@ -568,9 +568,9 @@ class NovaCCBasicDeployment(OpenStackAmuletDeployment):
                 'auth_host': ks_ncc_rel['service_host'],
                 'auth_port': ks_ncc_rel['auth_port'],
                 'auth_protocol': ks_ncc_rel['auth_protocol'],
-                'admin_tenant_name': ks_ncc_rel['service_tenant'],
-                'admin_user': ks_ncc_rel['service_username'],
-                'admin_password': ks_ncc_rel['service_password'],
+                'project_name': ks_ncc_rel['service_tenant'],
+                'username': ks_ncc_rel['service_username'],
+                'password': ks_ncc_rel['service_password'],
             }
             expected['DEFAULT'].update({
                 'lock_path': '/var/lock/nova',
@@ -594,9 +594,9 @@ class NovaCCBasicDeployment(OpenStackAmuletDeployment):
             expected['keystone_authtoken'] = {
                 'identity_uri': id_uri.rstrip('/'),
                 'auth_uri': ks_uri,
-                'admin_tenant_name': ks_ncc_rel['service_tenant'],
-                'admin_user': ks_ncc_rel['service_username'],
-                'admin_password': ks_ncc_rel['service_password'],
+                'project_name': ks_ncc_rel['service_tenant'],
+                'username': ks_ncc_rel['service_username'],
+                'password': ks_ncc_rel['service_password'],
                 'signing_dir': '/var/cache/nova',
             }
             expected['osapi_v3'] = {
